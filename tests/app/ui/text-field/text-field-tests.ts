@@ -98,7 +98,7 @@ export var testSetTextToZero = function () {
 
 function createFormattedString(value: any): FormattedString {
     var span = new Span();
-    span.text = value;
+    span.text = (!!value || parseInt(value) <= 1 || 1 <= parseInt(value)) ? value : "";
     var result = new FormattedString();
     result.spans.push(span);
 
